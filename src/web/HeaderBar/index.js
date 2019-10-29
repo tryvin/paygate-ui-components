@@ -9,6 +9,7 @@ import onClickOutside from "react-onclickoutside";
 
 import { Navbar, NavbarInner, NavColumn } from '../Navbar';
 import { DropdownMenu, DropdownMenuItem, MenuToggleButton } from '../DropdownMenu';
+
 import MainMenu from '../MainMenu';
 
 import logoImage from './images/logo.png';

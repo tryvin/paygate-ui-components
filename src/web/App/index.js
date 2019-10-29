@@ -46,24 +46,30 @@ const MainContent = ({mainMenu, isSidebarMode, isDockedEnabled, onSidebarButtonC
 function App() {
     const [menuOpen, setMenuOpen] = useState(false)
 
-    const isDockedEnabled = useMediaQuery('screen and (min-width: 800px)')
+    const isDockedEnabled = useMediaQuery('screen and (min-width: 700px)')
 
     return (
         <Router>
             <MainContainer>
-                <MediaQueryWidget mediaQuery={"screen and (max-width: 1864px)"}>
-                    <HeaderSidebar isDocked={isDockedEnabled} isOpen={menuOpen} setOpen={(isOpen) => setMenuOpen(isOpen)} mainMenu={mainMenu}>
-                        <MainContent
-                            isSidebarMode={true}
-                            isDockedEnabled={isDockedEnabled}
-                            onSidebarButtonClick={() => setMenuOpen(!menuOpen)}
-                        />
-                    </HeaderSidebar>
-                </MediaQueryWidget>
+                {!window.electronBridge ? (
+                    <Fragment>
+                        <MediaQueryWidget mediaQuery={"screen and (max-width: 800px)"}>
+                            <HeaderSidebar isDocked={isDockedEnabled} isOpen={menuOpen} setOpen={(isOpen) => setMenuOpen(isOpen)} mainMenu={mainMenu}>
+                                <MainContent
+                                    isSidebarMode={true}
+                                    isDockedEnabled={isDockedEnabled}
+                                    onSidebarButtonClick={() => setMenuOpen(!menuOpen)}
+                                />
+                            </HeaderSidebar>
+                        </MediaQueryWidget>
 
-                <MediaQueryWidget mediaQuery={"screen and (min-width: 1865px)"}>
+                        <MediaQueryWidget mediaQuery={"screen and (min-width: 801px)"}>
+                            <MainContent mainMenu={mainMenu}/>
+                        </MediaQueryWidget>
+                    </Fragment>
+                ) : (
                     <MainContent mainMenu={mainMenu}/>
-                </MediaQueryWidget>
+                )}
             </MainContainer>
         </Router>
     );
