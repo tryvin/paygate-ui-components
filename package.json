@@ -10,11 +10,14 @@
     "babel-loader": "^8.0.6",
     "electron-is-dev": "^1.1.0",
     "react": "^16.11.0",
+    "react-awesome-styled-grid": "^2.3.2",
     "react-dom": "^16.11.0",
     "react-onclickoutside": "^6.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-sidebar": "^3.0.2",
+    "react-virtualized-auto-sizer": "^1.0.2",
+    "react-window": "^1.8.5",
     "styled-components": "^4.4.0"
   },
   "scripts": {

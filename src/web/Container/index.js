@@ -16,12 +16,18 @@ export const FullContainer = styled.div`
     height: 100%;
 `
 
-export const ContainerFluid = styled.div`
+export const ContainerFluid = styled.div.attrs(props => ({
+    className: `${props.padded ? 'padded' : ''}`
+}))`
     padding: 0;
     &:after, &:before {
         display: table;
         content: "";
         line-height: 0;
+    }
+
+    &.padded {
+        padding: 15px;
     }
 `
 

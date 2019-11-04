@@ -14,5 +14,6 @@ export const tabledBeforeAndAfter = `
         display: table;
         content: "";
         line-height: 0;
+        clear: both;
     }
 `
