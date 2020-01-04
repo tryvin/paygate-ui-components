@@ -8,7 +8,14 @@ export default props => (
 	<Fragment>
 		<Row>
 			<Col xs={4} sm={4}>
-				<ButtonLink title={'Novo Cliente'} icon={'users'} padded to={'/customers/new'} />
+				<ButtonLink
+					title={'Novo Cliente'}
+					icon={'users'}
+					padded
+					to={'/customers/new'}
+					triangleIcon={'plus'}
+					triangleColor={'red'}
+				/>
 			</Col>
 			<Col xs={4} sm={4}>
 				<ButtonLink title={'Vendas'} icon={'barcode'} padded to={'/vending'} />
