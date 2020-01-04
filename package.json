@@ -9,6 +9,8 @@
     "@fortawesome/react-fontawesome": "^0.1.7",
     "babel-loader": "^8.0.6",
     "electron-is-dev": "^1.1.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "react": "^16.11.0",
     "react-awesome-styled-grid": "^2.3.2",
     "react-dom": "^16.11.0",
@@ -19,6 +21,17 @@
     "react-virtualized-auto-sizer": "^1.0.2",
     "react-window": "^1.8.5",
     "styled-components": "^4.4.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
