@@ -2,93 +2,92 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { linearGradient, tabledBeforeAndAfter } from '../Styled';
 
 const BoxHeaderBase = styled.div`
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-    background: #eaeaea;
-    background-size: 100%;
-    text-shadow: 0 1px white;
-    border-bottom: 1px solid #CDCDCD;
-    color: #636363;
-    font-weight: 600;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	background: #eaeaea;
+	background-size: 100%;
+	text-shadow: 0 1px white;
+	border-bottom: 1px solid #cdcdcd;
+	color: #636363;
+	font-weight: 600;
 
-    ${linearGradient('#fdfdfd', '#eaeaea')}
-    ${tabledBeforeAndAfter}
+	${linearGradient('#fdfdfd', '#eaeaea')}
+	${tabledBeforeAndAfter}
 
     & a {
-        color: #78808a;
-        text-decoration: none;
+		color: #78808a;
+		text-decoration: none;
 
-        &:hover {
-            color: #5a6573;
-        }
-    }
+		&:hover {
+			color: #5a6573;
+		}
+	}
 
-    & button {
-        background: transparent;
-        color: #78808a;
-        padding: 0;
-        border: 0;
+	& button {
+		background: transparent;
+		color: #78808a;
+		padding: 0;
+		border: 0;
 
-        &:hover {
-            color: #5a6573;
-        }
-    }
+		&:hover {
+			color: #5a6573;
+		}
+	}
 
-    & > span {
-        display: block;
-        padding: 10px;
-        font-size: 12px;
-        font-weight: 600;
+	& > span {
+		display: block;
+		padding: 10px;
+		font-size: 12px;
+		font-weight: 600;
 
-        &.left {
-            float: left;
-        }
+		&.left {
+			float: left;
+		}
 
-        &.right {
-            float: right;
-        }
+		&.right {
+			float: right;
+		}
 
-        & svg {
-            margin-right: 5px;
-        }
-    }
-`
+		& svg {
+			margin-right: 5px;
+		}
+	}
+`;
 
-const BoxHeader = ({title, icon, actions, renderRight}) => (
-    <BoxHeaderBase>
-        <span className={'left'}>
-            {icon && <FontAwesomeIcon icon={icon} />}
-            {title}
-        </span>
+const BoxHeader = ({ title, icon, actions, renderRight }) => (
+	<BoxHeaderBase>
+		<span className={'left'}>
+			{icon && <FontAwesomeIcon icon={icon} />}
+			{title}
+		</span>
 
-        {actions ? (
-            <span className={'right'}>
-                {actions.map(({icon, title, link, callback}) => {
-                    if ( link ) {
-                        return (
-                            <Link to={link} title={title}>
-                                <FontAwesomeIcon icon={icon} />
-                            </Link>
-                        )
-                    }
-                    else {
-                        return (
-                            <button onClick={callback}>
-                                <FontAwesomeIcon icon={icon} />
-                            </button>
-                        )
-                    }
-                })}
-            </span>
-        ) : null}
+		{actions ? (
+			<span className={'right'}>
+				{actions.map(({ icon, title, link, callback }) => {
+					if (link) {
+						return (
+							<Link to={link} title={title}>
+								<FontAwesomeIcon icon={icon} />
+							</Link>
+						);
+					} else {
+						return (
+							<button onClick={callback}>
+								<FontAwesomeIcon icon={icon} />
+							</button>
+						);
+					}
+				})}
+			</span>
+		) : null}
 
-        {renderRight ? renderRight() : null}
-    </BoxHeaderBase>
-)
+		{renderRight ? renderRight() : null}
+	</BoxHeaderBase>
+);
 
 export default BoxHeader;

@@ -2,28 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const MenuToggleButtonContainer = ({className, image, title, icon, linkTo, onClick}) => (
-    <Link className={className} to={linkTo} onClick={onClick}>
-        <span>
-            {image && (
-                <img src={image} alt={title} />
-            )}
+const MenuToggleButtonContainer = ({ className, image, title, icon, linkTo, onClick }) => (
+	<Link className={className} to={linkTo} onClick={onClick}>
+		<span>
+			{image && <img src={image} alt={title} />}
 
-            {icon && (<FontAwesomeIcon icon={icon} />)}
+			{icon && <FontAwesomeIcon icon={icon} />}
 
-            <span>
-                {title}
-            </span>
+			<span>{title}</span>
 
-            {! linkTo && (<FontAwesomeIcon icon={'caret-down'} />)}
-        </span>
-    </Link>
+			{!linkTo && <FontAwesomeIcon icon={'caret-down'} />}
+		</span>
+	</Link>
 );
 
 export default styled(MenuToggleButtonContainer).attrs(props => ({
-    className: `${props.isOpen ? 'isOpen' : ''} ${props.isSidebar ? 'isSidebar' : 'noSidebar'}`
+	className: `${props.isOpen ? 'isOpen' : ''} ${props.isSidebar ? 'isSidebar' : 'noSidebar'}`,
 }))`
     height: 40px;
     background: 'transparent';
@@ -100,4 +96,4 @@ export default styled(MenuToggleButtonContainer).attrs(props => ({
             position: absolute;
         }
     }
-`
+`;

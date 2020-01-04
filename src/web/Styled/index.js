@@ -7,7 +7,7 @@ export const linearGradient = (startColor = '#1b2329', endColor = '#11161a') => 
     background-image: -moz-linear-gradient(top,${startColor},${endColor});
     background-image: -o-linear-gradient(top,${startColor},${endColor});
     background-image: linear-gradient(top,${startColor},${endColor});
-`
+`;
 
 export const tabledBeforeAndAfter = `
     &:before, &:after {
@@ -16,4 +16,4 @@ export const tabledBeforeAndAfter = `
         line-height: 0;
         clear: both;
     }
-`
+`;

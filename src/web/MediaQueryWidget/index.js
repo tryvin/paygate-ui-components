@@ -1,32 +1,29 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 export const useMediaQuery = mediaQuery => {
-    const [mediaQueryMatches, setMediaQueryMatches] = useState(false);
+	const [mediaQueryMatches, setMediaQueryMatches] = useState(false);
 
-    useEffect(() => {
-        const updateMatch = () => setMediaQueryMatches(window.matchMedia(mediaQuery).matches)
+	useEffect(() => {
+		const updateMatch = () => setMediaQueryMatches(window.matchMedia(mediaQuery).matches);
 
-        updateMatch()
+		updateMatch();
 
-        const hasEventListenerMethod = typeof(window.matchMedia(mediaQuery).addListener) != 'undefined';
+		const hasEventListenerMethod =
+			typeof window.matchMedia(mediaQuery).addListener != 'undefined';
 
-        if ( hasEventListenerMethod ) {
-            window.matchMedia(mediaQuery)
-                .addListener(updateMatch)
-            return () => {
-                window.matchMedia(mediaQuery)
-                    .removeListener(updateMatch)
-            }
-        }
-    })
+		if (hasEventListenerMethod) {
+			window.matchMedia(mediaQuery).addListener(updateMatch);
+			return () => {
+				window.matchMedia(mediaQuery).removeListener(updateMatch);
+			};
+		}
+	});
 
-    return mediaQueryMatches
-}
+	return mediaQueryMatches;
+};
 
-export default ({mediaQuery, children}) => {
-    const mediaQueryMatches = useMediaQuery(mediaQuery)
+export default ({ mediaQuery, children }) => {
+	const mediaQueryMatches = useMediaQuery(mediaQuery);
 
-    return (
-        mediaQueryMatches ? children : null
-    )
-}
+	return mediaQueryMatches ? children : null;
+};
