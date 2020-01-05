@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Icon from '../Icon';
 import { Link } from 'react-router-dom';
 import { linearGradient, tabledBeforeAndAfter } from '../Styled';
 
@@ -62,7 +62,7 @@ const BoxHeaderBase = styled.div`
 const BoxHeader = ({ title, icon, actions, renderRight }) => (
 	<BoxHeaderBase>
 		<span className={'left'}>
-			{icon && <FontAwesomeIcon icon={icon} />}
+			{icon && <Icon icon={icon} />}
 			{title}
 		</span>
 
@@ -72,13 +72,13 @@ const BoxHeader = ({ title, icon, actions, renderRight }) => (
 					if (link) {
 						return (
 							<Link to={link} title={title}>
-								<FontAwesomeIcon icon={icon} />
+								<Icon icon={icon} />
 							</Link>
 						);
 					} else {
 						return (
 							<button onClick={callback}>
-								<FontAwesomeIcon icon={icon} />
+								<Icon icon={icon} />
 							</button>
 						);
 					}

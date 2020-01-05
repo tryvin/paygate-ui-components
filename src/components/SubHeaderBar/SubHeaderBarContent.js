@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Icon from '../Icon';
 
 const Title = styled.h3`
 	line-height: 35px;
@@ -24,7 +24,7 @@ const SubTitle = styled.h5`
 export default ({ title, icon, subtitle }) => (
 	<div>
 		<Title>
-			{icon && <FontAwesomeIcon icon={icon} />}
+			{icon && <Icon icon={icon} />}
 			{title}
 		</Title>
 

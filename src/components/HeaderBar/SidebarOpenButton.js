@@ -1,11 +1,11 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Icon from '../Icon';
 
 const SidebarOpenButtonBase = ({ onClick, className }) => (
 	<button onClick={onClick} className={className}>
-		<FontAwesomeIcon icon={'bars'} />
+		<Icon icon={'bars'} />
 	</button>
 );
 

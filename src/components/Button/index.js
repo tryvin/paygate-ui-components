@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Icon from '../Icon';
 import { linearGradient } from '../Styled';
 
 const ButtonBase = styled.button.attrs(props => ({
@@ -101,13 +101,13 @@ const TriangleButtonIconBase = styled.span.attrs(props => ({
 
 export const TriangleButtonIcon = ({ color, icon }) => (
 	<TriangleButtonIconBase color={color}>
-		<FontAwesomeIcon icon={icon} />
+		<Icon icon={icon} />
 	</TriangleButtonIconBase>
 );
 
 const Button = ({ icon, title, triangleIcon, triangleColor, ...props }) => (
 	<ButtonBase {...props} title={title}>
-		{icon && <FontAwesomeIcon icon={icon} />}
+		{icon && <Icon icon={icon} />}
 		<span>{title}</span>
 
 		{triangleIcon ? <TriangleButtonIcon color={triangleColor} icon={triangleIcon} /> : null}

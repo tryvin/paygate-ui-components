@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Icon from '../Icon';
 
 import { linearGradient } from '../Styled';
 
 const DropdownItem = ({ className, linkTo, title, icon }) => (
 	<li className={className}>
 		<Link to={linkTo}>
-			{icon && <FontAwesomeIcon icon={icon} />}
+			{icon && <Icon icon={icon} />}
 			<span>{title}</span>
 		</Link>
 	</li>

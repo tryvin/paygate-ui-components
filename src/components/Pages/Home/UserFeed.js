@@ -4,7 +4,9 @@ import Box, { BoxHeader, BoxContent } from '../../Box';
 
 export default props => (
 	<Box>
-		<BoxHeader title={'Resumo'} icon={'tachometer-alt'} />
-		<BoxContent padded>ola</BoxContent>
+		<BoxHeader title={'Feed Geral'} icon={'bug'} />
+		<BoxContent padded centered>
+			Sem feed no sistema!
+		</BoxContent>
 	</Box>
 );

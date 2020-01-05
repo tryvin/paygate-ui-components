@@ -7,6 +7,8 @@ import SubHeaderBar, { SubHeaderBarContent } from '../../SubHeaderBar';
 
 import ButtonBox from './ButtonBox';
 import SummaryBox from './SummaryBox';
+import SystemWarnings from './SystemWarnings';
+import UserFeed from './UserFeed';
 
 export default props => (
 	<ContainerFluid>
@@ -26,6 +28,14 @@ export default props => (
 					</Col>
 					<Col xs={4} sm={8} md={6} lg={10}>
 						<SummaryBox />
+					</Col>
+				</Row>
+				<Row>
+					<Col xs={8} sm={16} md={4} lg={6}>
+						<SystemWarnings />
+					</Col>
+					<Col xs={8} sm={16} md={4} lg={6}>
+						<UserFeed />
 					</Col>
 				</Row>
 			</GridContainer>
