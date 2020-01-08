@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, Suspense, lazy } from 'react';
 
 import './reset.css';
 import './app.css';
@@ -9,12 +9,12 @@ import { MainContainer } from '../Container';
 import HeaderBar, { HeaderSidebar } from '../HeaderBar';
 import MediaQueryWidget, { useMediaQuery } from '../MediaQueryWidget';
 
-import Homepage from '../Pages/Home';
-
 import mainMenu from './mainMenu';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+
+const Homepage = lazy(() => import('../Pages/Home'));
 
 library.add(fas);
 
@@ -35,11 +35,11 @@ const MainContent = ({ mainMenu, isSidebarMode, isDockedEnabled, onSidebarButton
 			onSidebarButtonClick={onSidebarButtonClick}
 		/>
 
-		<Switch>
-			<Route path="/" exact>
-				<Homepage />
-			</Route>
-		</Switch>
+		<Suspense fallback={<div>Loading...</div>}>
+			<Switch>
+				<Route path="/" exact component={Homepage} />
+			</Switch>
+		</Suspense>
 	</Fragment>
 );
 
