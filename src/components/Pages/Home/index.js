@@ -10,6 +10,9 @@ import SummaryBox from './SummaryBox';
 import SystemWarnings from './SystemWarnings';
 import UserFeed from './UserFeed';
 
+import systemWarningData from './data/systemwarnings';
+import systemFeedData from './data/systemfeed';
+
 export default props => (
 	<ContainerFluid>
 		<SubHeaderBar>
@@ -32,10 +35,10 @@ export default props => (
 				</Row>
 				<Row>
 					<Col xs={8} sm={16} md={4} lg={6}>
-						<SystemWarnings />
+						<SystemWarnings data={systemWarningData} />
 					</Col>
 					<Col xs={8} sm={16} md={4} lg={6}>
-						<UserFeed />
+						<UserFeed data={systemFeedData} />
 					</Col>
 				</Row>
 			</GridContainer>

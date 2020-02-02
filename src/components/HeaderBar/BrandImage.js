@@ -8,6 +8,10 @@ export const BrandImageLink = styled(Link)`
 	display: block;
 `;
 
+export const BrandImageAnchor = styled.div`
+	height: 40px;
+`;
+
 export default styled.img`
 	max-height: 42px;
 	margin-left: ${props => (props.sidebar ? '0px' : '-20px')};

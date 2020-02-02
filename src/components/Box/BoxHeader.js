@@ -77,7 +77,7 @@ const BoxHeader = ({ title, icon, actions, renderRight }) => (
 						);
 					} else {
 						return (
-							<button onClick={callback}>
+							<button onClick={callback} title={title}>
 								<Icon icon={icon} />
 							</button>
 						);

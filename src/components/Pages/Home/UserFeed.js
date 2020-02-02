@@ -3,6 +3,7 @@ import React from 'react';
 import Box, { BoxHeader, BoxContent } from '../../Box';
 
 import DynamicHeightList from '../../List/DynamicHeightList';
+import ListItem from '../../List/ListItem';
 
 export default ({ data }) => (
 	<Box>
@@ -13,11 +14,14 @@ export default ({ data }) => (
 					<DynamicHeightList
 						data={data}
 						rowRenderer={({ style, rowData }) => (
-							<div style={style}>
-								<div style={{ 'margin-bottom': '10px' }}>
-									<p>{rowData}</p>
-								</div>
-							</div>
+							<ListItem
+								style={style}
+								icon={rowData.icon}
+								iconColor={rowData.color}
+								title={rowData.title}
+								text={rowData.text}
+								time={rowData.time}
+							/>
 						)}
 					/>
 				</div>

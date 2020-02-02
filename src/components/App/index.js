@@ -9,6 +9,8 @@ import { MainContainer } from '../Container';
 import HeaderBar, { HeaderSidebar } from '../HeaderBar';
 import MediaQueryWidget, { useMediaQuery } from '../MediaQueryWidget';
 
+import LoadingBar from '../LoadingBar';
+
 import mainMenu from './mainMenu';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -35,7 +37,7 @@ const MainContent = ({ mainMenu, isSidebarMode, isDockedEnabled, onSidebarButton
 			onSidebarButtonClick={onSidebarButtonClick}
 		/>
 
-		<Suspense fallback={<div>Loading...</div>}>
+		<Suspense fallback={<LoadingBar infinity />}>
 			<Switch>
 				<Route path="/" exact component={Homepage} />
 			</Switch>

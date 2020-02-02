@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Sidebar from 'react-sidebar';
 
-import BrandImage, { BrandImageLink } from './BrandImage';
+import BrandImage, { BrandImageLink, BrandImageAnchor } from './BrandImage';
 import MainMenu from '../MainMenu';
 
 import logoImage from './images/logo.png';
@@ -20,7 +20,9 @@ export default ({ isDocked, isOpen, setOpen, mainMenu, brandLink, children }) =>
 				<BrandImageLink to={brandLink}>
 					<BrandImage src={logoImage} sidebar />
 				</BrandImageLink>
-			) : null}
+			) : (
+				<BrandImageAnchor />
+			)}
 
 			<MainMenu menu={mainMenu} open={isOpen} isSidebar={true} />
 		</Fragment>
@@ -33,6 +35,7 @@ export default ({ isDocked, isOpen, setOpen, mainMenu, brandLink, children }) =>
 			docked={isDocked}
 			open={isOpen}
 			onSetOpen={setOpen}
+			transitions={false}
 		>
 			{children}
 		</Sidebar>
